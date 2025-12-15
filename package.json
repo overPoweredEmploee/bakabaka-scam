@@ -1,0 +1,23 @@
+{
+  "name": "frontend-scam",
+  "version": "1.0.0",
+  "description": "Тут будут собраны задания для менторства по фронтенд разработке. Начиная с html заканчивая трудоустройством",
+  "main": "index.js",
+  "scripts": {
+    "format": "prettirer . --write"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IgorGoryany/frontend-scam.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IgorGoryany/frontend-scam/issues"
+  },
+  "homepage": "https://github.com/IgorGoryany/frontend-scam#readme",
+  "devDependencies": {
+    "prettier": "^3.7.4"
+  }
+}

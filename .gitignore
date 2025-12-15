@@ -1,0 +1,52 @@
+# Зависимости (Dependencies)
+node_modules/
+/npm-debug.log*
+
+# Артефакты сборки (Build artifacts)
+# Игнорирует папки, куда обычно помещаются результаты сборки проекта
+/build
+/dist
+/out
+/docs
+/es
+/lib
+/temp
+/tmp
+
+# Файлы конфигурации и окружения (Configuration and Environment files)
+# Файлы с переменными окружения, содержащими чувствительные данные
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.DS_Store # Файлы macOS
+ehthumbs.db # Файлы Windows
+Thumbs.db # Файлы Windows
+
+# Кэш и временные файлы (Cache and temporary files)
+.cache/
+.eslintcache
+.stylelintcache
+.parcel-cache/
+.next/ # Для Next.js
+.nuxt/ # Для Nuxt.js
+.svelte-kit/ # Для SvelteKit
+
+# IDE и редакторы (IDE and editors)
+# Игнорирует специфические файлы редакторов, которые не должны попасть в общий репозиторий
+.idea/ # Для WebStorm/IntelliJ
+.vscode/settings.json
+*.suo
+*.ntvs
+*.njsproj
+*.sln
+*.vsprops
+
+# Отчеты по тестированию (Test coverage)
+coverage/
+.nyc_output/
+
+# Дополнительные файлы
+*.log
+*.pid
+*.seed
