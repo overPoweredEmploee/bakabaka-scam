@@ -1,0 +1,104 @@
+.p1 {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.p2 {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.p3 {
+  font-size: 15px;
+  line-height: 24px;
+}
+
+.p4 {
+  font-size: 17px;
+  line-height: 26px;
+}
+
+.p5 {
+  font-size: 14px;
+  line-height: 14px;
+}
+
+.p6 {
+  font-size: 18px;
+  line-height: 26px;
+}
+
+.p7 {
+  font-size: 24px;
+  line-height: 30px;
+}
+
+.p8 {
+  font-size: 23px;
+  line-height: 30px;
+}
+/*---------*/
+.h1 {
+  font-size: 32px;
+  line-height: 38px;
+}
+
+.h2 {
+  font-size: 39px;
+  line-height: 42px;
+}
+
+.h3 {
+  font-size: 64px;
+  line-height: 70px;
+}
+
+.h4 {
+  font-size: 40px;
+  line-height: 42px;
+}
+/*--------------*/
+
+:root {
+  --primary-color: #645c55;
+  --secondary-color: #1b1a1a;
+  --tertiary-color: #403e3b;
+  --white-color: #ffffff;
+  --minor-color: #ece7e4;
+}
+
+/*--------------*/
+
+.color1 {
+  color: var(--primary-color);
+}
+
+.color2 {
+  color: var(--secondary-color);
+}
+
+.color3 {
+  color: var(--tertiary-color);
+}
+
+.color4 {
+  color: var(--white-color);
+}
+
+.color5 {
+  color: var(--minor-color);
+}
+
+/*--------------*/
+
+.bg-color-white {
+  background-color: var(--white-color);
+}
+
+.bg-color-dark {
+  background-color: var(--secondary-color);
+}
+
+.bg-color-home {
+  background-color: var(--minor-color);
+}
