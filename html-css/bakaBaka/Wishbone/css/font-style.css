@@ -1,3 +1,7 @@
+body {
+  font-family: 'Poppins';
+}
+
 .p1 {
   font-size: 16px;
   line-height: 24px;
@@ -59,12 +63,19 @@
 }
 /*--------------*/
 
+.uppercase {
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
 :root {
   --primary-color: #645c55;
   --secondary-color: #1b1a1a;
   --tertiary-color: #403e3b;
   --white-color: #ffffff;
   --minor-color: #ece7e4;
+  --mini-color: #cec4bc;
+  --projects-bg: #f7f7f7;
 }
 
 /*--------------*/

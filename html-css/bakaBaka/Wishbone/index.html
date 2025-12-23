@@ -10,42 +10,39 @@
     <link rel="stylesheet" href="css/zero.css" />
     <link rel="stylesheet" href="css/font-style.css">
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/components.css">
     <link rel="icon" href="../5. css3/img/stone1.png" type="image/x-icon" />
     <meta charset="UTF-8" />
-    <title>Камень</title>
+    <title>Wishbone</title>
   </head>
   <body>
     <div class="container">
       <header class="header">
-        <div class="header_body">
-          <div class="header_logo">
-            <img src="img/footer.png" alt="" />
-          </div>
-          <div class="header_menu">
-            <div class="header_menu_buttons p3">
-              <a href="#">Projects</a>
-              <a href="#">About</a>
-              <a href="#">News</a>
-              <a href="#">Team</a>
-              <a href="#">Contact</a>
-              <div class="header_menu_chadbutton">
-                <a href="#" class="header_menu_chadbutton p1 color4 bg-color-dark">Get template</a>
-              </div>
+        <img src="img/footer.png" alt="" />
+        <div class="header_menu">
+          <div class="header_menu_links p3">
+            <a href="#">Projects</a>
+            <a href="#">About</a>
+            <a href="#">News</a>
+            <a href="#">Team</a>
+            <a href="#">Contact</a>
+            <div class="button">
+              <a href="#" class="p1 color4">Get template</a>
             </div>
           </div>
         </div>
       </header>
       <div class="home bg-color-home">
           <div class="home_content">
-            <div class="home_header p2 color1">Wishbone+Partners</div>
-            <div class="home_title h3 color2">The home of beautiful architecture.</div>
-            <div class="home_text p1 color3">
+            <p class="home_header uppercase p2 color1">Wishbone+Partners</p>
+            <h1 class="home_title h3 color2">The home of beautiful architecture.</h1>
+            <p class="home_text p1 color3">
               We are an architecture firm with a focus on beautiful but
               functional design. At its heart, we believe design is about
               usability and accessibility — these are the guiding principles for
               our work. Read more about our previous projects, our process and
               our team below.
-            </div>
+            </p>
             <div class="home_button">
               <button class="p1 bg-color-home">Read more</button>
             </div>
@@ -56,131 +53,116 @@
       </div>
       <div class="firm">
         <div class="firm_body">
-          <div class="firm_title h1 color3">Our firm</div>
-          <div class="firm_content">
-            <div class="firm_text p1 color3">
-              <p>
+          <h2 class="firm_title h1 color3">Our firm</h2>
+          <div class="firm_content p1 color3">
+            <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Suspendisse varius enim in eros elementum tristique. Duis
                 cursus, mi quis viverra ornare, eros dolor interdum nulla, ut
                 commodo diam libero vitae erat. Aenean faucibus nibh et justo
                 cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus
                 tristique posuere.
-              </p>
-              <p>
+            </p>
+            <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Suspendisse varius enim in eros elementum tristique. Duis
                 cursus, mi quis viverra ornare, eros dolor interdum nulla, ut
                 commodo diam libero vitae erat. Aenean faucibus nibh et justo
                 cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus
                 tristique posuere.
-              </p>
-              <p>
+            </p>
+            <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Suspendisse varius enim in eros elementum tristique. Duis
                 cursus, mi quis viverra ornare, eros dolor interdum nulla, ut
                 commodo diam libero vitae erat. Aenean faucibus nibh et justo
                 cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus
                 tristique posuere.
-              </p>
-            </div>
-            <div class="firm_stephen">
-              <div class="firm_stephen_name p4">Stephen Collier</div>
-              <div class="firm_stephen_job p5 color1">Senior Partner</div>
+            </p>
+            <div class="team_people_item">
+              <img class="miniature" src="img/guy.jpg" alt="">
+              <div>
+                <p class="firm_stephen_name p4">Stephen Collier</p>
+                <p class="firm_stephen_job p5 color1">Senior Partner</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
       <div class="reeding">
-        <div class="reeding_body">
-          <div class="reeding_image">
-            <img src="img/reeding.jpg" alt="" />
-          </div>
-          <div class="reeding_text_block">
-            <div class="reeding_title p2 color3">Reeding House</div>
-            <div class="reeding_text p1 color1">
-              Lorem ipsum dolor sit amet, dolor sit amet dolor sit amet.
-            </div>
-          </div>
+        <div class="bg_text_block">
+          <p class="reeding_title uppercase p2 color3">Reeding House</p>
+          <p class="reeding_text p1 color1">Lorem ipsum dolor sit amet, dolor sit amet dolor sit amet.</p>
         </div>
       </div>
       <div class="process">
-        <div class="process_body">
-          <div class="process_header">
-            <div class="process_title p2 color1">Our process</div>
-            <div class="process_how h2 color2">How we do what we do.</div>     
+        <div class="process_header">
+          <p class="process_title uppercase p2 color1">Our process</p>
+          <p class="process_how h2 color2">How we do what we do.</p>     
+        </div>
+        <div class="process_row">
+          <div class="process_column">
+            <div class="item_process">
+              <div class="item_process__icon">
+                <img
+                  class="item_process__icon"
+                  src="img/process1.png"
+                  alt=""
+                />
+              </div>
+              <div class="item_process__title p6">Sketching</div>
+              <div class="item_process__text p1 color1">
+                Lorem ipsum dolor sit amet, adipiscing elit. Nulla ut
+                tristique libero. Nulla luctus sapien ac arcu tempor, vitae
+                tempor leo iaculis.
+              </div>
           </div>
-          <div class="process_row">
-            <div class="process_column">
-              <div class="item_process">
-                <div class="item_process__icon">
-                  <img
-                    class="item_process__icon"
-                    src="img/process1.png"
-                    alt=""
-                  />
-                </div>
-                <div class="item_process__title p6">Sketching</div>
-                <div class="item_process__text p1 color1">
-                  Lorem ipsum dolor sit amet, adipiscing elit. Nulla ut
-                  tristique libero. Nulla luctus sapien ac arcu tempor, vitae
-                  tempor leo iaculis.
-                </div>
+          </div>
+          <div class="process_column">
+            <div class="item_process">
+              <div class="item_process__icon">
+                <img
+                  class="item_process__icon"
+                  src="img/process2.png"
+                  alt=""
+                />
+              </div>
+              <div class="item_process__title p6">Finalizing</div>
+              <div class="item_process__text p1">
+                Adipiscing elit. Nulla ut tristique libero. Nulla vitae tempor
+                leo iaculis luctus sapien ac arcu tempor, vitae.
               </div>
             </div>
-            <div class="process_column">
-              <div class="item_process">
-                <div class="item_process__icon">
-                  <img
-                    class="item_process__icon"
-                    src="img/process2.png"
-                    alt=""
-                  />
-                </div>
-                <div class="item_process__title p6">Finalizing</div>
-                <div class="item_process__text p1">
-                  Adipiscing elit. Nulla ut tristique libero. Nulla vitae tempor
-                  leo iaculis luctus sapien ac arcu tempor, vitae.
-                </div>
+          </div>
+          <div class="process_column">
+            <div class="item_process">
+              <div class="item_process__icon">
+                <img
+                  class="item_process__icon"
+                  src="img/process3.png"
+                  alt=""
+                />
               </div>
-            </div>
-            <div class="process_column">
-              <div class="item_process">
-                <div class="item_process__icon">
-                  <img
-                    class="item_process__icon"
-                    src="img/process3.png"
-                    alt=""
-                  />
-                </div>
-                <div class="item_process__title p6">Building</div>
-                <div class="item_process__text p1">
-                  Nulla ut tristique libero. Lorem ipsum ut tristique libero.
-                  Nulla luctus sapien ac arcu tempor, vitae lorem ipsum dolor
-                  leo iaculis.
-                </div>
+              <div class="item_process__title p6">Building</div>
+              <div class="item_process__text p1">
+                Nulla ut tristique libero. Lorem ipsum ut tristique libero.
+                Nulla luctus sapien ac arcu tempor, vitae lorem ipsum dolor
+                leo iaculis.
               </div>
             </div>
           </div>
         </div>
       </div>
       <div class="staircase">
-        <div class="staircase_body">
-          <div class="staircase_image">
-            <img src="img/staircase.jpg" alt="" />
-          </div>
-          <div class="staircase_text_block">
-            <div class="staircase_title p2 color3">The marble staircase</div>
-            <div class="staircase_text p1 color1">
-              Lorem ipsum dolor sit amet, dolor sit amet dolor sit amet.
-            </div>
-          </div>
+        <div class="bg_text_block">
+          <p class="staircase_title uppercase p2 color3">The marble staircase</p>
+          <p class="staircase_text p1 color1">Lorem ipsum dolor sit amet, dolor sit amet dolor sit amet.</p>
         </div>
       </div>
       <div class="customers">
         <div class="customers_body">
           <div class="customers_content">
-            <div class="customers_content_header p2 color5">prior clients</div>
+            <div class="customers_content_header uppercase p2 color5">prior clients</div>
             <div class="customers_content_title h1 color4">Happy customers.</div>
             <div class="customers_content_text p3 color5">
               Morbi neque ex, condimentum dapibus congue et, vulputate ut
@@ -205,16 +187,9 @@
         </div>
       </div>
       <div class="swirling">
-        <div class="swirling_body">
-          <div class="swirling_image">
-            <img src="img/staircase2.jpg" alt="" />
-          </div>
-          <div class="swirling_text_block">
-            <div class="swirling_title p2 color3">The swirling staircase</div>
-            <div class="swirling_text p1 color1">
-              Lorem ipsum dolor sit amet, dolor sit amet dolor sit amet.
-            </div>
-          </div>
+        <div class="bg_text_block bg_left">
+          <p class="swirling_title uppercase p2 color3">The swirling staircase</p>
+          <p class="swirling_text p1 color1">Lorem ipsum dolor sit amet, dolor sit amet dolor sit amet.</p>
         </div>
       </div>
       <div class="projects">
@@ -233,11 +208,11 @@
             <div class="projects_column">
               <div class="projects_column_image">
                 <img src="img/project2.jpg" alt="" />
-                <div class="projects_column_button">
+                <div class="projects_column_button button">
                   <button class="p1 color4 bg-color-dark">Read more</button>
                 </div>
                 <div class="projects_column_header">
-                  <div class="projects_column_header_title p2 color1">New York</div>
+                  <div class="projects_column_header_title uppercase p2 color1">New York</div>
                   <div class="projects_column_header_text p8 color3">
                     Big Road Brewery
                   </div>
@@ -254,60 +229,50 @@
       <div class="team">
         <div class="team_body">
           <div class="team_content">
-            <div class="team_title h1 color3">Meet our team</div>
-            <div class="team_text p3 color1">
+            <h2 class="team_title h1 color3">Meet our team</h2>
+            <p class="team_text p3 color1">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               Suspendisse varius enim in eros elementum tristique. Duis cursus,
               mi quis.
-            </div>
+            </p>
             <div class="team_see p1">
               <button class="bg-color-white">See team</button>
             </div>
           </div>
           <div class="team_people">
             <div class="team_people_item">
-              <div class="team_people_photo">
-                <img src="img/guy.jpg" alt="" />
-              </div>
+              <img class="miniature" src="img/guy.jpg" alt="" />
               <div class="team_people_info">
-                <div class="team_people_name p4 color2">Stephen Collier</div>
-                <div class="team_people_job p5 color1">Senior Partner</div>
+                <p class="team_people_name p4 color2">Stephen Collier</p>
+                <p class="team_people_job p5 color1">Senior Partner</p>
               </div>
             </div>
             <div class="team_people_item">
-              <div class="team_people_photo">
-                <img src="img/guy2.jpg" alt="" />
-              </div>
+              <img class="miniature" src="img/guy2.jpg" alt="" />
               <div class="team_people_info">
-                <div class="team_people_name p4 color2">Nolan Peters</div>
-                <div class="team_people_job p5 color1">Associate</div>
+                <p class="team_people_name p4 color2">Nolan Peters</p>
+                <p class="team_people_job p5 color1">Associate</p>
               </div>
             </div>
             <div class="team_people_item">
-              <div class="team_people_photo">
-                <img src="img/guy3.jpg" alt="" />
-              </div>
+              <img class="miniature" src="img/guy3.jpg" alt="" />
               <div class="team_people_info">
-                <div class="team_people_name p4 color2">Ferris Wonder</div>
-                <div class="team_people_job p5 color1">Associate Partner</div>
+                <p class="team_people_name p4 color2">Ferris Wonder</p>
+                <p class="team_people_job p5 color1">Associate Partner</p>
               </div>
             </div>
             <div class="team_people_item">
-              <div class="team_people_photo">
-                <img src="img/guy4.jpg" alt="" />
-              </div>
+              <img class="miniature" src="img/guy4.jpg" alt="" />
               <div class="team_people_info">
-                <div class="team_people_name p4 color2">Aria Stone</div>
-                <div class="team_people_job p5 color1">Senior Partner</div>
+                <p class="team_people_name p4 color2">Aria Stone</p>
+                <p class="team_people_job p5 color1">Senior Partner</p>
               </div>
             </div>
             <div class="team_people_item">
-              <div class="team_people_photo">
-                <img src="img/guy5.jpg" alt="" />
-              </div>
+              <img class="miniature" src="img/guy5.jpg" alt="" />
               <div class="team_people_info">
-                <div class="team_people_name p4 color2">Niko Ferry</div>
-                <div class="team_people_job p5 color1">Partner</div>
+                <p class="team_people_name p4 color2">Niko Ferry</p>
+                <p class="team_people_job p5 color1">Partner</p>
               </div>
             </div>
           </div>
@@ -316,7 +281,7 @@
       <div class="touch">
         <div class="touch_body">
           <div class="touch_content">
-            <div class="touch_contend_header p2 color1">Get in touch</div>
+            <div class="touch_contend_header uppercase p2 color1">Get in touch</div>
             <div class="touch_content_text h4 color2">
               Think we would be a good fit for your next project?
             </div>
