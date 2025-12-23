@@ -1,0 +1,31 @@
+.button {
+  padding: 11px 20px;
+  border-radius: 14px;
+  background-color: var(--secondary-color);
+}
+
+.miniature {
+  display: block;
+  object-fit: cover;
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  border: 3px solid var(--mini-color);
+}
+
+:root {
+  --bg-reeding: url(../img/reeding.jpg);
+  --bg-staircase: url(../img/staircase.jpg);
+  --bg-swirling: url(../img/staircase2.jpg);
+}
+
+.bg_text_block {
+  width: 300px;
+  position: absolute;
+  right: 4%;
+  padding-top: 266px;
+}
+
+.bg_left {
+  left: 4%;
+}
