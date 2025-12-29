@@ -13,10 +13,21 @@
   border: 3px solid var(--mini-color);
 }
 
-:root {
-  --bg-reeding: url(../img/reeding.jpg);
-  --bg-staircase: url(../img/staircase.jpg);
-  --bg-swirling: url(../img/staircase2.jpg);
+.background_element {
+  height: 600px;
+  position: relative;
+}
+
+.reeding {
+  background: url(../img/reeding.jpg) center / cover no-repeat;
+}
+
+.staircase {
+  background: url(../img/staircase.jpg) center / cover no-repeat;
+}
+
+.swirling {
+  background: url(../img/staircase2.jpg) center / cover no-repeat;
 }
 
 .bg_text_block {
