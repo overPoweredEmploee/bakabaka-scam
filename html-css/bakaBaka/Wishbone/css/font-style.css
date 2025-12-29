@@ -113,3 +113,15 @@ body {
 .bg-color-home {
   background-color: var(--minor-color);
 }
+
+.bg-color-customers {
+  background-color: var(--tertiary-color);
+}
+
+.bg-color-projects {
+  background-color: var(--projects-bg);
+}
+
+.bg-color-mini {
+  background-color: var(--mini-color);
+}
