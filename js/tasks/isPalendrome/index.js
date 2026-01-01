@@ -1,9 +1,9 @@
 // на вход дается строка
-// нужно вернуть true если строка яляется палидромом
+// нужно вернуть true если строка является палиндромом
 // игнорируя пробелы и знаки препинания
 // false для остальных случаев
 
-function isPalendrome(string) {
+function isPalindrome(srcString, checkString) {
   // code here
 }
 
