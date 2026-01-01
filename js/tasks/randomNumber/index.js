@@ -1,23 +1,31 @@
 //Создать игру "Угадай число"
 
-const secretNum = Math.ceil(Math.random() * 10);
-let tries = 0;
+let secretNum;
+let tries;
+
+function resetGame() {
+  secretNum = Math.ceil(Math.random() * 10);
+  tries = 0;
+}
+
+resetGame();
 
 function guessNum(num) {
-  if (tries < 5) {
-    if (num == secretNum) {
-      alert('Правильно');
-      tries = 5;
-    } else {
-      tries++;
-      alert(`Неправильно. Использовано попыток: ${tries}`);
-      if (num > secretNum) {
-        alert('Загаданное число меньше');
-      } else {
-        alert('Загаданное число больше');
-      }
-    }
-  } else {
+  if (tries >= 5) {
     alert(`Игра окончена, загаданное число — ${secretNum}`);
+    resetGame();
+    return;
   }
+  п;
+  if (num === secretNum) {
+    alert('Правильно');
+    resetGame();
+    return;
+  }
+
+  tries++;
+  alert(`Неправильно. Использовано попыток: ${tries}`);
+  num > secretNum
+    ? alert('Загаданное число меньше')
+    : alert('Загаданное число больше');
 }
