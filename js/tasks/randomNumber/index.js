@@ -16,7 +16,7 @@ function guessNum(num) {
     resetGame();
     return;
   }
-  п;
+
   if (num === secretNum) {
     alert('Правильно');
     resetGame();
