@@ -5,3 +5,9 @@
 // код писать тут
 
 const number = 14253;
+
+if (number % 2 === 0) {
+  console.log('Четное');
+} else {
+  console.log('Нечетное');
+}
