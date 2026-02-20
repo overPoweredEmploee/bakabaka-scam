@@ -3,10 +3,6 @@
 // игнорируя пробелы и знаки препинания
 // false для остальных случаев
 
-function isPalindrome(srcString, checkString) {
-  // code here
-}
-
 const strings = [
   '121',
   '13250',
@@ -17,3 +13,14 @@ const strings = [
   'А роза упала на лапу Азора',
   'Аргентина манит негра',
 ];
+
+function isPalindrome(str) {
+  const redactedString = str.toLowerCase().replace(/[^a-zа-я0-9]/gi, '');
+  return redactedString === redactedString.split('').reverse().join('');
+}
+
+for (let i = 0; i < strings.length; i++) {
+  console.log(isPalindrome(strings[i]));
+}
+
+isPalindrome(strings);
