@@ -1,0 +1,19 @@
+.shop {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  gap: 50px;
+}
+
+.product {
+  border: 1px solid black;
+  max-width: 300px;
+  padding: 20px;
+}
+
+.basket {
+  text-align: center;
+  margin: 0 auto;
+  max-width: 300px;
+  border: 1px solid black;
+}
