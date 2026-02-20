@@ -11,8 +11,25 @@ const strings = [
   'икамбокам',
   'бокамикам',
   'синтксиса',
+  'кот',
+  'ток',
 ];
 
-function filterAnagram(strings) {
-  // code here
+function filterAnagram(array) {
+  const map = {};
+  const sorted = [];
+
+  for (let i = 0; i < array.length; i++) {
+    const word = array[i];
+    const alreadySeen = word.split('').sort().join('');
+
+    if (alreadySeen in map) {
+      continue;
+    }
+    map[alreadySeen] = i;
+    sorted.push(word);
+  }
+  return sorted;
 }
+
+console.log(filterAnagram(strings));
