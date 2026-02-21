@@ -16,8 +16,8 @@ const products = [
   },
 ];
 
-const totalPrice = document.getElementById('total');
-const cart = document.getElementById('basket-items');
+const totalPriceSpan = document.getElementById('total');
+const cartList = document.getElementById('basket-items');
 
 let basketItems = [];
 
@@ -38,24 +38,24 @@ function removeFromBasket(productId) {
   renderBasket(basketItems);
 }
 
-function rerenderTotalPrice(items) {
+function renderTotalPrice(items) {
   const price = items.reduce((acc, product) => {
     return acc + product.price;
   }, 0);
-  totalPrice.innerText = price;
+  totalPriceSpan.innerText = price;
 }
 
 function renderCart(items) {
-  cart.innerHTML = '';
+  cartList.innerHTML = '';
   items.forEach((item) => {
     const el = document.createElement('li');
     el.innerText = item.title;
     el.onclick = () => removeFromBasket(item.id);
-    cart.appendChild(el);
+    cartList.appendChild(el);
   });
 }
 
 function renderBasket(items) {
   renderCart(items);
-  rerenderTotalPrice(items);
+  renderTotalPrice(items);
 }
