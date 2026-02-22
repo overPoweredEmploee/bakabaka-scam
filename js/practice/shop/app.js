@@ -18,23 +18,27 @@ const products = [
 
 const totalPriceSpan = document.getElementById('total');
 const cartList = document.getElementById('basket-items');
+document.addEventListener('DOMContentLoaded', loadItems);
 
-let basketItems = [];
+let basketItems = JSON.parse(localStorage.getItem('items') || '[]');
 
 function addToBasket(productId) {
   let prop = products.find((product) => product.id === productId);
 
   if (basketItems.find((product) => product.id === productId)) {
-    return alert('Товар уже в корзине');
+    return console.log('Товар уже в корзине');
   }
 
   basketItems = [...basketItems, prop];
 
+  addToStorage(prop);
   renderBasket(basketItems);
 }
 
 function removeFromBasket(productId) {
   basketItems = basketItems.filter((product) => product.id !== productId);
+
+  removeFromStorage(productId);
   renderBasket(basketItems);
 }
 
@@ -58,4 +62,32 @@ function renderCart(items) {
 function renderBasket(items) {
   renderCart(items);
   renderTotalPrice(items);
+}
+
+function getItems() {
+  const items = JSON.parse(localStorage.getItem('items')) || [];
+  return items;
+}
+
+function addToStorage(item) {
+  const items = getItems();
+  items.push(item);
+
+  localStorage.setItem('items', JSON.stringify(items));
+}
+
+function removeFromStorage(prop) {
+  const items = getItems();
+  localStorage.setItem(
+    'items',
+    JSON.stringify(items.filter((item) => item.id !== prop))
+  );
+}
+
+function loadItems() {
+  const items = JSON.parse(localStorage.getItem('items'));
+
+  if (items) {
+    renderBasket(items);
+  }
 }
