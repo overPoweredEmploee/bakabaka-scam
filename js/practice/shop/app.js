@@ -20,7 +20,7 @@ const totalPriceSpan = document.getElementById('total');
 const cartList = document.getElementById('basket-items');
 document.addEventListener('DOMContentLoaded', loadItems);
 
-let basketItems = JSON.parse(localStorage.getItem('items') || '[]');
+let basketItems = getItems();
 
 function addToBasket(productId) {
   let prop = products.find((product) => product.id === productId);
@@ -65,8 +65,7 @@ function renderBasket(items) {
 }
 
 function getItems() {
-  const items = JSON.parse(localStorage.getItem('items')) || [];
-  return items;
+  return JSON.parse(localStorage.getItem('items')) || [];
 }
 
 function addToStorage(item) {
@@ -85,9 +84,7 @@ function removeFromStorage(prop) {
 }
 
 function loadItems() {
-  const items = JSON.parse(localStorage.getItem('items'));
+  const items = getItems();
 
-  if (items) {
-    renderBasket(items);
-  }
+  renderBasket(items);
 }
