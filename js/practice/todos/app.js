@@ -1,96 +1,102 @@
 // Globals //
 
-const todoList = document.getElementById("todo-list");
-const userSelect = document.getElementById("user-todo");
-const form = document.querySelector("form");
+const todoListElement = document.getElementById('todo-list');
+const userSelectElement = document.getElementById('user-todo');
+const form = document.querySelector('form');
 let todos = [];
 let users = [];
 
 // Attach events //
 
-document.addEventListener("DOMContentLoaded", initApp);
-form.addEventListener("submit", handleSubmit);
+document.addEventListener('DOMContentLoaded', initApp);
+form.addEventListener('submit', handleSubmit);
 
 // Basic Logic //
 
 function getUserName(userId) {
   const user = users.find((u) => u.id === userId);
-  return user.name;
+  return user?.name ?? 'Unknown user';
 }
 
 function printToDo({ id, userId, title, completed }) {
-  const li = document.createElement("li");
-  li.className = "todo-item";
+  const li = document.createElement('li');
+  li.className = 'todo-item';
   li.dataset.id = id;
-  li.innerHTML = `<span>${title} <i>by</i> <b>${getUserName(userId)}</b></span>`;
+  li.innerText = `${title} by ${getUserName(userId)}`;
 
-  const status = document.createElement("input");
-  status.type = "checkbox";
-  status.checked = "complete";
-  status.addEventListener("change", handleTodoChange);
+  const status = document.createElement('input');
+  status.type = 'checkbox';
+  status.checked = completed;
+  status.addEventListener('change', handleTodoChange);
 
-  const close = document.createElement("span");
-  close.innerHTML = "&times";
-  close.className = "close";
-  close.addEventListener("click", handleClose);
+  const close = document.createElement('span');
+  close.innerHTML = '&times';
+  close.className = 'close';
+  close.addEventListener('click', handleClose);
 
-  todoList.prepend(li);
+  todoListElement.prepend(li);
   li.prepend(status);
   li.append(close);
 }
 
 function createUserOption(user) {
-  const option = document.createElement("option");
+  const option = document.createElement('option');
   option.value = user.id;
   option.innerText = user.name;
 
-  userSelect.append(option);
+  userSelectElement.append(option);
 }
 
 function removeTodo(todoId) {
   todos = todos.filter((todo) => todo.id !== todoId);
 
-  const todo = todoList.querySelector(`[data-id='${todoId}']`);
-  todo.querySelector("input").removeEventListener("change", handleTodoChange);
-  todo.querySelector(".close").removeEventListener("click", handleClose);
+  const todo = todoListElement.querySelector(`[data-id='${todoId}']`);
+  todo.querySelector('input').removeEventListener('change', handleTodoChange);
+  todo.querySelector('.close').removeEventListener('click', handleClose);
 
   todo.remove();
 }
 
-function alertError() {
+function alertError(error) {
   alert(error.message);
 }
 
 // Event Logic //
 
-function initApp() {
-  Promise.all([getAllTodos(), getAllUsers()]).then((values) => {
-    [todos, users] = values;
+async function initApp() {
+  try {
+    [todos, users] = await Promise.all([getAllTodos(), getAllUsers()]);
 
     todos.forEach((todo) => printToDo(todo));
     users.forEach((user) => createUserOption(user));
-  });
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 function handleSubmit(event) {
   event.preventDefault();
 
-  createTodo({
+  const newTodo = {
     userId: Number(form.user.value),
     title: form.todo.value,
     completed: false,
-  });
+  };
+
+  createTodo(newTodo);
+
+  todos = [...todos, newTodo];
 }
 
-function handleTodoChange() {
-  const todoId = this.parentElement.dataset.id;
+function handleTodoChange(event) {
+  const todoId = event.target.parentElement.dataset.id;
   const completed = this.checked;
 
   toggleTodo(todoId, completed);
 }
 
-function handleClose() {
-  const todoId = this.parentElement.dataset.id;
+function handleClose(event) {
+  const todoId = event.target.parentElement.dataset.id;
   deleteTodo(todoId);
 }
 
@@ -98,7 +104,12 @@ function handleClose() {
 
 async function getAllTodos() {
   try {
-    const response = await fetch("https://jsonplaceholder.typicode.com/todos");
+    const response = await fetch('https://jsonplaceholder.typicode.com/todos');
+
+    if (!response.ok) {
+      throw new Error('Failed to fetch');
+    }
+
     const data = await response.json();
 
     return data;
@@ -109,7 +120,12 @@ async function getAllTodos() {
 
 async function getAllUsers() {
   try {
-    const response = await fetch("https://jsonplaceholder.typicode.com/users");
+    const response = await fetch('https://jsonplaceholder.typicode.com/users');
+
+    if (!response.ok) {
+      throw new Error('Failed to fetch');
+    }
+
     const data = await response.json();
 
     return data;
@@ -120,13 +136,17 @@ async function getAllUsers() {
 
 async function createTodo(todo) {
   try {
-    const response = await fetch("https://jsonplaceholder.typicode.com/todos", {
-      method: "POST",
+    const response = await fetch('https://jsonplaceholder.typicode.com/todos', {
+      method: 'POST',
       body: JSON.stringify(todo),
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
     });
+
+    if (!response.ok) {
+      throw new Error('Failed to fetch');
+    }
 
     const todoItem = await response.json();
 
@@ -141,16 +161,16 @@ async function toggleTodo(todoId, completed) {
     const response = await fetch(
       `https://jsonplaceholder.typicode.com/todos/${todoId}`,
       {
-        method: "PATCH",
+        method: 'PATCH',
         body: JSON.stringify({ completed }),
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
         },
-      },
+      }
     );
 
     if (!response.ok) {
-      throw new Error("Failed connection");
+      throw new Error('Failed connection');
     }
   } catch (error) {
     alertError(error);
@@ -162,19 +182,20 @@ async function deleteTodo(todoId) {
     const response = await fetch(
       `https://jsonplaceholder.typicode.com/todos/${todoId}`,
       {
-        method: "DELETE",
+        method: 'DELETE',
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
         },
-      },
+      }
     );
 
     if (response.ok) {
       removeTodo(todoId);
     } else {
-      throw new Error("Failed connection");
+      throw new Error('Failed connection');
     }
   } catch (error) {
     alertError(error);
+    console.log(error);
   }
 }
