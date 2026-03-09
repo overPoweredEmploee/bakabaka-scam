@@ -33,7 +33,7 @@ form select {
   padding: 0.5rem 1rem;
 }
 
-input[type="text"] {
+input[type='text'] {
   width: 100%;
 }
 
@@ -63,6 +63,11 @@ ul {
 }
 
 .close {
+  border: none;
+  outline: none;
+  display: inline;
+  margin-left: auto;
+  background-color: transparent;
   color: red;
   cursor: pointer;
   font-weight: bolder;
