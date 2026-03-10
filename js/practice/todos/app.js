@@ -94,8 +94,6 @@ function alertError(error) {
 // Event Logic //
 
 async function initApp() {
-  console.log('asd');
-
   const [todos, users] = await Promise.all([
     fetchInstance({ method: 'GET', url: 'todos' }),
     fetchInstance({ method: 'GET', url: 'users' }),
